@@ -3,7 +3,9 @@ package guru.springframework.sdjpaintro.bootstrap;
 import guru.springframework.sdjpaintro.domain.Book;
 import guru.springframework.sdjpaintro.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataInitializer implements CommandLineRunner {
 
     private final BookRepository bookRepository;
@@ -15,11 +17,9 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Book bookDDD = new Book("Domain Driven Design", "123", "RandomHouse");
-
         System.out.println("Id: " + bookDDD.getId());
 
         Book savedDDD = bookRepository.save(bookDDD);
-
         System.out.println("Id: " + savedDDD.getId());
 
         Book bookSIA = new Book("Spring In Action", "234234", "O'Reilly");
