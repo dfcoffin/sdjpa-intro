@@ -27,7 +27,7 @@ public class SpringBootJpaTestSlice {
     @Commit
     @Order(1)
     @Test
-    void testJpaTestSlice() {
+    void testJpaTestSplice() {
         long countBefore = bookRepository.count();
         assertThat(countBefore).isEqualTo(2);
 
@@ -40,7 +40,7 @@ public class SpringBootJpaTestSlice {
 
     @Order(2)
     @Test
-    void testJpaTestSliceTransaction() {
+    void testJpaTestSpliceTransaction() {
         long countBefore = bookRepository.count();
         assertThat(countBefore).isEqualTo(3);
 
